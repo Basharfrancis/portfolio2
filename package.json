@@ -4,7 +4,7 @@
   "description": "A clean, beautiful and responsive portfolio template for Developers!",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -d --config webpack.dev.config.js --content-base public/ --progress --colors",
+    "start:dev": "webpack-dev-server",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {
