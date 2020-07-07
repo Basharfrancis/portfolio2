@@ -3,12 +3,13 @@ const common = require('./webpack.common');
 const merge = require('webpack-merge');
 const path = require('path');
 
+
 module.exports = merge(common, {
   mode: 'development',
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
+  devtool: 'inline-source-map',
+  devServer: {
+      contentBase: './dist'
+   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template.html',
@@ -28,3 +29,10 @@ module.exports = merge(common, {
     ]
   }
 });
+// module.exports = merge(common, {
+//   mode: 'development',
+//   devtool: 'inline-source-map',
+//   devServer: {
+//       contentBase: './dist'
+//    }
+//   });
